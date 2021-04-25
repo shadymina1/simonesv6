@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  h2(style='color: red;').slogan #{messageToRegister}
+  .container.landing-content(style='min-height: 20em; margin-bottom: 2em;')
+    h2
+      | Step 1 
+      br
+      |  Please fill the below form:
+    br
+    form.container.form-login(action='./enroll' method='post' id='enrollForm' )
+      .container.credentials
+        br
+        div.unvalid
+          small#emailError
+        input.login-input(required='' type='email' name='email' id='email' placeholder='Enter your email' onkeyup ="nospacesEmail(this)")       
+        br
+        br
+        div.unvalid
+          small#userNameError
+        input.login-input(required='' type='text' name='userName' id='userName' placeholder='Enter your user name' onkeyup="chrOnly(this)")       
+        br
+        br
+        div.unvalid
+          small#passError
+        input.login-input(required='' type='password' name='pass' placeholder='Enter your password' id='password' onkeyup ="nospaces(this)")
+        br
+        br
+        div.unvalid
+          small#cellError
+        input.login-input(required='' type='text' name='cell' placeholder='Phone Number' id='cell' onkeyup="numbersOnly(this)")
+        
+          
+          
+        br
+        .form-check
+          label.form-check-label(for='flexCheckDefault')
+            input#flexCheckDefault(type='checkbox' value='' onchange="isChecked(this,'sub1')")
+            |  I agree to receive essential correspondence like but not limited to: confirmation email, teacher feedback, student absences and makeup class alert.
+        button#sub1(style='width:60%; max-width: 7em;' disabled='disabled' ).login-input  Submit
+        br
+  div(style='min-height: 6em;')  
+ 
+   

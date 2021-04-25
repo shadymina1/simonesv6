@@ -1,0 +1,60 @@
+extends layout
+
+block content
+    .container.landing-content-(style='min-height: 20em; margin-bottom: 2em;')
+      div(style='')
+        img(src="../images/colors.png", style='width:50%' alt="")
+        h4 clikck on the the student's name 
+        h4 to change his/her info and schedule
+        br
+        div(style='align-items: center;')
+          if student1
+            form(action="./profileStudent" method="post") 
+              input(type='text' hidden='' value='1' name='student1')
+              button(style='width:60%; max-width: 12em;').button #{student1}
+            br
+          if student2
+            form(action="./profileStudent" method="post") 
+              input(type='text' hidden='' value='2' name='student1')
+              button(style='width:60%; max-width: 12em;').button #{student2}
+            br
+          if student3
+            form(action="./profileStudent" method="post") 
+              input(type='text' hidden='' value='3' name='student1')
+              button(style='width:60%; max-width: 12em;').button #{student3}
+            br
+          if student4
+            form(action="./profileStudent" method="post") 
+              input(type='text' hidden='' value='4' name='student1')
+              button(style='width:60%; max-width: 12em; ').button #{student4}
+            br
+      br
+      .container.form-login
+        .container
+          if (is_session)
+            if(numOfStudents<4)
+              br
+              a(href ="./enroll2")
+                button(style='width:60%; max-width: 12em;').buttonAction Add Student
+            else 
+              h6 You have reached the maximum number of students under your account
+          else 
+            a(href='/enroll' style='width:60%; max-width: 8em; font-size:2em;').buttonAction  Enroll Now! 
+          br
+          br
+          .focus(style='max-width:650px') 
+            h2 What is next?
+            ol.focus
+              li(style='text-align:left;')  You pay  -for your #{numOfStudents} students- total of administration fees: #{sumAdmFees} CAD by email e-transfere
+              li(style='text-align:left;')  We will confirm recieving the payment
+              li(style='text-align:left;')  Every student schedule will be assigned shortly ( usually one week - or maximum 2 weeks)
+              li(style='text-align:left;')  Once we assign the student scheduele,  plesae pay the total of first reguler fees: #{sumlMonFees} CAD for your #{numOfStudents} students
+          br
+          .focus(hidden) 
+            h3 Your total administration fees: #{sumAdmFees} CAD 
+            h3 The schedual wil be assigned after we recieve the adminstration fees within 2 weeks
+            h3 Once we assign you a scheduel we will send you an email to pay the first reguler fees: #{sumlMonFees} CAD  
+            h3 You will pay the reguler fees every 4 classes (4 weeks)
+        
+    div(style='min-height: 6em;')
+  

@@ -1,0 +1,65 @@
+.button   {
+  transition: all 0.0s ease;
+    background-color: #7b38d8;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+   
+   
+  }
+  .button span , .buttonAction span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button:hover {
+    background-color: #d400db;
+  }
+  .button:hover span {
+    padding-right: 25px;
+  }
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  /* buttonAction*/
+  
+  .buttonAction span:after ,.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+  }
+  .buttonAction:hover {
+    background-color: #04ffff;
+    color: #005068;
+  }
+  .buttonAction:hover span {
+    padding-right: 25px;
+  }
+  .buttonAction:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  .buttonAction {
+    font-family: 'Sriracha', cursive;
+    text-decoration: none;
+    background-color: #f700ff;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #fffcfc;
+    text-align: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    width:60%;
+    max-width: 12em;
+   /*font-size:2em;*/
+    color:rgb(255, 255, 255);
+  }
