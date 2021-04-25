@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var ssn; // we have declare ssn everytime dealing with session!!
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://simone:fortheacademy@cluster0.8z6e8.mongodb.net/<dbname>?retryWrites=true&w=majority";
+var url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/<dbname>?retryWrites=true&w=majority&ssl=true`;
 /* GET home page. */
 router.get('/', function(req, res, next) {
   ssn = req.session; 
